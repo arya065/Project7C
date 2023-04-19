@@ -1,9 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package modelos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonPropertyOrder({
+    "error",
     "category",
     "type",
     "setup",
@@ -11,12 +16,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "flags",
     "safe",
     "id",
-    "lang",
-    "joke"
+    "lang"
 })
 
 public class Joke {
 
+    @JsonProperty("error")
+    private Boolean error;
     @JsonProperty("category")
     private String category;
     @JsonProperty("type")
@@ -33,8 +39,6 @@ public class Joke {
     private Integer id;
     @JsonProperty("lang")
     private String lang;
-    @JsonProperty("joke")
-    private String joke;
 
     /**
      * No args constructor for use in serialization
@@ -50,13 +54,14 @@ public class Joke {
      * @param safe
      * @param setup
      * @param id
+     * @param error
      * @param category
      * @param type
      * @param lang
-     * @param joke
      */
-    public Joke(String category, String type, String setup, String delivery, Flags flags, Boolean safe, Integer id, String lang, String joke) {
+    public Joke(Boolean error, String category, String type, String setup, String delivery, Flags flags, Boolean safe, Integer id, String lang) {
         super();
+        this.error = error;
         this.category = category;
         this.type = type;
         this.setup = setup;
@@ -65,7 +70,16 @@ public class Joke {
         this.safe = safe;
         this.id = id;
         this.lang = lang;
-        this.joke = joke;
+    }
+
+    @JsonProperty("error")
+    public Boolean getError() {
+        return error;
+    }
+
+    @JsonProperty("error")
+    public void setError(Boolean error) {
+        this.error = error;
     }
 
     @JsonProperty("category")
@@ -148,31 +162,11 @@ public class Joke {
         this.lang = lang;
     }
 
-    @JsonProperty("joke")
-    public String getJoke() {
-        return joke;
-    }
-
-    @JsonProperty("joke")
-    public void setJoke(String joke) {
-        this.joke = joke;
-    }
-
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Joke{");
-        sb.append("category=").append(category);
-        sb.append(", type=").append(type);
-        sb.append(", setup=").append(setup);
-        sb.append(", delivery=").append(delivery);
-        sb.append(", flags=").append(flags);
-        sb.append(", safe=").append(safe);
-        sb.append(", id=").append(id);
-        sb.append(", lang=").append(lang);
-        sb.append(", joke=").append(joke);
-        sb.append('}');
-        return sb.toString();
+        return "Chiste{" + "error=" + error + ", category=" + category + ", type=" + type + ", setup=" + setup + ", delivery=" + delivery + ", flags=" + flags + ", safe=" + safe + ", id=" + id + ", lang=" + lang + '}';
     }
+    
+    
 
 }

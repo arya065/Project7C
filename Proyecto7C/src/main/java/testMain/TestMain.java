@@ -18,12 +18,12 @@ public class TestMain {
         String urlBase = "https://v2.jokeapi.dev/joke/Programming?lang=es";
         String urlBase2 = "https://v2.jokeapi.dev/joke/Any?lang=es&amount=5";
         String fichero = ConexionHTTP.peticionHttpGet(urlBase);
-        String fichero2 = ConexionHTTP.peticionHttpGet(urlBase2);
+        String fichero2 = ConexionHTTP.peticionHttpGet("https://www.maralboran.eu");
 
         Joke chiste = (Joke) JsonService.stringToPojo(fichero, Joke.class);
         System.out.println(chiste);
-        System.out.println("-------------");
-        ListaChistes lista = (ListaChistes) JsonService.stringToPojo(fichero2, ListaChistes.class);
-        lista.getJokes().forEach(System.out::println);
+        System.out.println(fichero2);
+//        ListaChistes lista = (ListaChistes) JsonService.stringToPojo(fichero2, ListaChistes.class);
+//        lista.getJokes().forEach(System.out::println);
     }
 }
