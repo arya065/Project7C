@@ -1,29 +1,24 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
 package testMain;
 
 import java.io.IOException;
 import modelos.*;
 import com.mycompany.proyecto7c.*;
 
-/**
- *
- * @author carlos
- */
+
 public class TestMain {
 
     public static void main(String[] args) throws IOException {
-        String urlBase = "https://v2.jokeapi.dev/joke/Programming?lang=es";
-        String urlBase2 = "https://v2.jokeapi.dev/joke/Any?lang=es&amount=5";
-        String fichero = ConexionHTTP.peticionHttpGet(urlBase);
-        String fichero2 = ConexionHTTP.peticionHttpGet("https://www.maralboran.eu");
+        String urlBase = "https://api.websitecarbon.com/site?url=";
+        String urlDop = "https://www";
+        String urlTotal = urlBase + urlDop;
+        try{
+        String fichero = ConexionHTTP.peticionHttpGet(urlTotal);
 
-        Joke chiste = (Joke) JsonService.stringToPojo(fichero, Joke.class);
-        System.out.println(chiste);
-        System.out.println(fichero2);
-//        ListaChistes lista = (ListaChistes) JsonService.stringToPojo(fichero2, ListaChistes.class);
-//        lista.getJokes().forEach(System.out::println);
+        Common common = (Common) JsonService.stringToPojo(fichero, Common.class);
+        System.out.println(common);
+        } catch (IOException e){
+            System.out.println("URL no correcto");
+        }
+
     }
 }
