@@ -40,7 +40,7 @@ public class Renewable {
 
     @Override
     public String toString() {
-        return "Renewable{" + "grams=" + grams + ", litres=" + litres + '}';
+        return "                grams=" + grams + ", \n" + "                litres=" + litres + ", \n";
     }
 
 }

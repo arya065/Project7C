@@ -40,7 +40,7 @@ public class Grid {
 
     @Override
     public String toString() {
-        return "Grid{" + "grams=" + grams + ", litres=" + litres + '}';
+        return "                grams=" + grams + ", \n" + "                litres="  + litres + ",";
     }
 
 }

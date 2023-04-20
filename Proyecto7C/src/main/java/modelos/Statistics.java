@@ -51,7 +51,7 @@ public class Statistics {
 
     @Override
     public String toString() {
-        return "Statistics{" + "adjustedBytes=" + adjustedBytes + ", energy=" + energy + ", co2=" + co2 + '}';
+        return "        adjustedBytes=" + adjustedBytes + ", \n" + "        energy=" + energy + ", \n" + "       co2:" + "\n" + co2 ;
     }
 
 }

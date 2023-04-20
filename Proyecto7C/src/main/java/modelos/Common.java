@@ -87,7 +87,9 @@ public class Common {
 
     @Override
     public String toString() {
-        return "Common{" + "url=" + url + ", green=" + green + ", bytes=" + bytes + ", cleanerThan=" + cleanerThan + ", statistics=" + statistics + ", timestamp=" + timestamp + '}';
+        return "\n" + "url=" + url + ", \n" + "green=" + green + ", \n" + "bytes=" + bytes + ", \n"
+                + "cleanerThan=" + cleanerThan + ", \n"
+                + "statistics:"+ "\n" + statistics + "timestamp=" + timestamp + "\n";
     }
 
 }

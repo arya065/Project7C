@@ -40,7 +40,7 @@ public class Co2 {
 
     @Override
     public String toString() {
-        return "Co2{" + "grid=" + grid + ", renewable=" + renewable + '}';
+        return "            grid:" + "\n" + grid + "\n" + "            renewable:" + "\n" + renewable + "\n";
     }
 
 }

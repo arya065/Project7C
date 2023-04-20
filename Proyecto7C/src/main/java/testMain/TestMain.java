@@ -9,16 +9,15 @@ import graphic.Carbon;
 public class TestMain {
 
     public static void main(String[] args) throws IOException {
-        Carbon testInterfaz = new Carbon();
-//        testInterfaz.get
+        
         String urlBase = "https://api.websitecarbon.com/site?url=";
-        String urlDop = "";
+        String urlDop = "https://mail.google.com";
         String urlTotal = urlBase + urlDop;
         try{
         String fichero = ConexionHTTP.peticionHttpGet(urlTotal);
 
         Common common = (Common) JsonService.stringToPojo(fichero, Common.class);
-        System.out.println(common);
+            System.out.println(common);
         } catch (IOException e){
             System.out.println("URL no correcto");
         }
