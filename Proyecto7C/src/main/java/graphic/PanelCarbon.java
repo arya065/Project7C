@@ -106,16 +106,16 @@ public class PanelCarbon extends javax.swing.JFrame {
         String urlDop = jTextField1.getText();
         String urlBase = "https://api.websitecarbon.com/site?url=";
         String urlTotal = urlBase + urlDop;
-        
-        try{
-        String fichero = ConexionHTTP.peticionHttpGet(urlTotal);
 
-        Common common = (Common) JsonService.stringToPojo(fichero, Common.class);
-        jTextArea1.setText(common.toString());
-        } catch (IOException e){
+        try {
+            String fichero = ConexionHTTP.peticionHttpGet(urlTotal);
+
+            Common common = (Common) JsonService.stringToPojo(fichero, Common.class);
+            jTextArea1.setText(common.toString());
+        } catch (IOException e) {
             jTextArea1.setText("URL no correcto");
         }
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTextField1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseClicked

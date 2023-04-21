@@ -15,7 +15,7 @@ public class Common {
     @JsonProperty("url")
     private String url;
     @JsonProperty("green")
-    private Boolean green;
+    private String green;
     @JsonProperty("bytes")
     private int bytes;
     @JsonProperty("cleanerThan")
@@ -25,7 +25,7 @@ public class Common {
     @JsonProperty("timestamp")
     private long timestamp;
 
-    public Common(String url, Boolean green, int bytes, String cleanerThan, Statistics statistics, long timestamp) {
+    public Common(String url, String green, int bytes, String cleanerThan, Statistics statistics, long timestamp) {
         this.url = url;
         this.green = green;
         this.bytes = bytes;
@@ -45,11 +45,11 @@ public class Common {
         this.url = url;
     }
 
-    public Boolean getGreen() {
+    public String getGreen() {
         return green;
     }
 
-    public void setGreen(Boolean green) {
+    public void setGreen(String green) {
         this.green = green;
     }
 
